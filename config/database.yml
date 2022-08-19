@@ -1,22 +1,21 @@
 default: &default
   adapter: postgresql
+  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
+  host: <%= ENV["DATABASE_HOST"] %>
+  username: <%= ENV["DATABASE_USERNAME"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
 
 development:
   <<: *default
   database: simple_analytics_development
 
-staging:
-  <<: *default
-  database: <%= ENV.fetch("DB_NAME", "postgres") %>
-  port: <%= ENV.fetch("DB_PORT", "5432") %>
-
-production:
-  <<: *default
-  database: <%= ENV.fetch("DB_NAME", "postgres") %>
-  port: <%= ENV.fetch("DB_PORT", "5432") %>
-
 test:
   <<: *default
   database: simple_analytics_test
+
+production:
+  <<: *default
+  database: simple_analytics_production
+  username: simple_analytics
+  password: <%= ENV['SIMPLE_ANALYTICS_DATABASE_PASSWORD'] %>
