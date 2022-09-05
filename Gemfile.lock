@@ -70,6 +70,12 @@ GEM
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    graphql (2.0.13)
+    graphql-rails_logger (1.2.3)
+      actionpack (> 5.0)
+      activesupport (> 5.0)
+      railties (> 5.0)
+      rouge (~> 3.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     listen (3.7.1)
@@ -125,6 +131,7 @@ GEM
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    rouge (3.30.0)
     spring (4.0.0)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
@@ -147,6 +154,8 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
+  graphql
+  graphql-rails_logger
   listen (~> 3.3)
   pg
   puma (~> 5.0)

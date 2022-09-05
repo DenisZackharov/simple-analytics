@@ -3,10 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
+gem 'bootsnap', '>= 1.4.4', require: false
+gem "graphql"
+gem "graphql-rails_logger"
 gem 'rails', '~> 6.1.6'
 gem 'pg'
 gem 'puma', '~> 5.0'
-gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
